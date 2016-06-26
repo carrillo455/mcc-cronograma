@@ -301,7 +301,7 @@
 
                         <div class="large-6 medium-6 small-12 columns">
                             <a href="#" class="small button expand">Crear Nueva Acción</a>
-                        </div>
+                        </div>-->
 
                         <div class="large-6 medium-6 small-12 columns">
                             <a href="#" class="small button expand"
@@ -321,7 +321,7 @@
                                 <input type="hidden" name="accion"
                                     value="importar-acciones-excel">
                             </form>
-                        </div> -->
+                        </div>
 
                         <!-- <div class="large-12 columns text-center">
                             <label for="presupuesto-global">
