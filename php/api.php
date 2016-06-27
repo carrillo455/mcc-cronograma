@@ -4,7 +4,7 @@
     session_start();
 
     // CONEXION A LA BASE DE DATOS
-    $pdo = new PDO("mysql:host=localhost;dbname=cronograma;charset=utf8", "root", "4lt4m1r4*");
+    $pdo = new PDO("mysql:host=mysql.mccdiocesistampico.org;dbname=cronograma;charset=utf8", "mcctampico", "jesusconnosotros");
 
     // if ( !isset($_SESSION["usuario"]) )
     // {
@@ -207,6 +207,7 @@
         break;
 
         case "importar-acciones-excel":
+            exit;
             // $dir_to_save = "uploads/";
             $file_basename = basename($_FILES["file"]["name"]);
             // $path_to_save = $dir_to_save . $file_basename;
@@ -724,7 +725,7 @@
                                 $fecha_termino = "";
                             }
                             $fecha_inicio  = $sheetData[$i]["BO"] == -1 ? "2016-07-04 00:00:00" : $fecha_inicio;
-                            $fecha_termino = $sheetData[$i]["BO"] == -1 ? date("Y-m-d H:i:s", strtotime("2016-07-04 00:00:00")+$semana_unix) : $fecha_termino;
+                            $fecha_termino = $sheetData[$i]["BO"] == -1 ? "2016-07-04 23:59:59" : $fecha_termino;
                             if (!empty($fecha_inicio) && !empty($fecha_termino))
                             {
                                 $insert = $pdo->query("INSERT INTO calendario VALUES(NULL, $id_accion, '$fecha_inicio', '$fecha_termino', 1, ' ', 0)");
@@ -732,7 +733,7 @@
                                 $fecha_termino = "";
                             }
                             $fecha_inicio  = $sheetData[$i]["BP"] == -1 ? "2016-07-05 00:00:00" : $fecha_inicio;
-                            $fecha_termino = $sheetData[$i]["BP"] == -1 ? date("Y-m-d H:i:s", strtotime("2016-07-05 00:00:00")+$semana_unix) : $fecha_termino;
+                            $fecha_termino = $sheetData[$i]["BP"] == -1 ? "2016-07-05 23:59:59" : $fecha_termino;
                             if (!empty($fecha_inicio) && !empty($fecha_termino))
                             {
                                 $insert = $pdo->query("INSERT INTO calendario VALUES(NULL, $id_accion, '$fecha_inicio', '$fecha_termino', 1, ' ', 0)");
@@ -740,7 +741,7 @@
                                 $fecha_termino = "";
                             }
                             $fecha_inicio  = $sheetData[$i]["BQ"] == -1 ? "2016-07-06 00:00:00" : $fecha_inicio;
-                            $fecha_termino = $sheetData[$i]["BQ"] == -1 ? date("Y-m-d H:i:s", strtotime("2016-07-06 00:00:00")+$semana_unix) : $fecha_termino;
+                            $fecha_termino = $sheetData[$i]["BQ"] == -1 ? "2016-07-06 23:59:59" : $fecha_termino;
                             if (!empty($fecha_inicio) && !empty($fecha_termino))
                             {
                                 $insert = $pdo->query("INSERT INTO calendario VALUES(NULL, $id_accion, '$fecha_inicio', '$fecha_termino', 1, ' ', 0)");
@@ -748,7 +749,7 @@
                                 $fecha_termino = "";
                             }
                             $fecha_inicio  = $sheetData[$i]["BR"] == -1 ? "2016-07-07 00:00:00" : $fecha_inicio;
-                            $fecha_termino = $sheetData[$i]["BR"] == -1 ? date("Y-m-d H:i:s", strtotime("2016-07-07 00:00:00")+$semana_unix) : $fecha_termino;
+                            $fecha_termino = $sheetData[$i]["BR"] == -1 ? "2016-07-07 23:59:59" : $fecha_termino;
                             if (!empty($fecha_inicio) && !empty($fecha_termino))
                             {
                                 $insert = $pdo->query("INSERT INTO calendario VALUES(NULL, $id_accion, '$fecha_inicio', '$fecha_termino', 1, ' ', 0)");
@@ -756,7 +757,7 @@
                                 $fecha_termino = "";
                             }
                             $fecha_inicio  = $sheetData[$i]["BS"] == -1 ? "2016-07-08 00:00:00" : $fecha_inicio;
-                            $fecha_termino = $sheetData[$i]["BS"] == -1 ? date("Y-m-d H:i:s", strtotime("2016-07-08 00:00:00")+$semana_unix) : $fecha_termino;
+                            $fecha_termino = $sheetData[$i]["BS"] == -1 ? "2016-07-08 23:59:59" : $fecha_termino;
                             if (!empty($fecha_inicio) && !empty($fecha_termino))
                             {
                                 $insert = $pdo->query("INSERT INTO calendario VALUES(NULL, $id_accion, '$fecha_inicio', '$fecha_termino', 1, ' ', 0)");
@@ -764,7 +765,7 @@
                                 $fecha_termino = "";
                             }
                             $fecha_inicio  = $sheetData[$i]["BT"] == -1 ? "2016-07-09 00:00:00" : $fecha_inicio;
-                            $fecha_termino = $sheetData[$i]["BT"] == -1 ? date("Y-m-d H:i:s", strtotime("2016-07-09 00:00:00")+$semana_unix) : $fecha_termino;
+                            $fecha_termino = $sheetData[$i]["BT"] == -1 ? "2016-07-09 23:59:59" : $fecha_termino;
                             if (!empty($fecha_inicio) && !empty($fecha_termino))
                             {
                                 $insert = $pdo->query("INSERT INTO calendario VALUES(NULL, $id_accion, '$fecha_inicio', '$fecha_termino', 1, ' ', 0)");
@@ -772,7 +773,7 @@
                                 $fecha_termino = "";
                             }
                             $fecha_inicio  = $sheetData[$i]["BU"] == -1 ? "2016-07-10 00:00:00" : $fecha_inicio;
-                            $fecha_termino = $sheetData[$i]["BU"] == -1 ? date("Y-m-d H:i:s", strtotime("2016-07-10 00:00:00")+$semana_unix) : $fecha_termino;
+                            $fecha_termino = $sheetData[$i]["BU"] == -1 ? "2016-07-10 23:59:59" : $fecha_termino;
                             if (!empty($fecha_inicio) && !empty($fecha_termino))
                             {
                                 $insert = $pdo->query("INSERT INTO calendario VALUES(NULL, $id_accion, '$fecha_inicio', '$fecha_termino', 1, ' ', 0)");
@@ -780,7 +781,7 @@
                                 $fecha_termino = "";
                             }
                             $fecha_inicio  = $sheetData[$i]["BV"] == -1 ? "2016-07-11 00:00:00" : $fecha_inicio;
-                            $fecha_termino = $sheetData[$i]["BV"] == -1 ? date("Y-m-d H:i:s", strtotime("2016-07-11 00:00:00")+$semana_unix) : $fecha_termino;
+                            $fecha_termino = $sheetData[$i]["BV"] == -1 ? "2016-07-11 23:59:59" : $fecha_termino;
                             if (!empty($fecha_inicio) && !empty($fecha_termino))
                             {
                                 $insert = $pdo->query("INSERT INTO calendario VALUES(NULL, $id_accion, '$fecha_inicio', '$fecha_termino', 1, ' ', 0)");
@@ -788,7 +789,7 @@
                                 $fecha_termino = "";
                             }
                             $fecha_inicio  = $sheetData[$i]["BW"] == -1 ? "2016-07-12 00:00:00" : $fecha_inicio;
-                            $fecha_termino = $sheetData[$i]["BW"] == -1 ? date("Y-m-d H:i:s", strtotime("2016-07-12 00:00:00")+$semana_unix) : $fecha_termino;
+                            $fecha_termino = $sheetData[$i]["BW"] == -1 ? "2016-07-12 23:59:59" : $fecha_termino;
                             if (!empty($fecha_inicio) && !empty($fecha_termino))
                             {
                                 $insert = $pdo->query("INSERT INTO calendario VALUES(NULL, $id_accion, '$fecha_inicio', '$fecha_termino', 1, ' ', 0)");
